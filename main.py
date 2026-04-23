@@ -444,7 +444,7 @@ def status_badge(status: str) -> str:
 
 st.markdown("""
 <div class="hero-header">
-    <div class="hero-title">📋 Trello <span>Extractor</span></div>
+    <div class="hero-title">Trello <span>Extractor</span></div>
     <p class="hero-sub">Importe o JSON exportado do Trello e gere relatórios filtrados por período</p>
 </div>
 """, unsafe_allow_html=True)
@@ -560,7 +560,6 @@ tab_table, tab_cards = st.tabs(["📊 Tabela", "🃏 Cartões"])
 with tab_table:
     st.dataframe(
         df_filtered,
-        # use_container_width=True,
         width='stretch',
         hide_index=True,
         column_config={
