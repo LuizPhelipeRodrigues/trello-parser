@@ -299,6 +299,7 @@ def build_observation(status: str, done_date: datetime | None, obs: str) -> str:
     # Não concluído → usa descrição se houver
     return obs if obs else f"Status atual: {status}"  
 
+# FIX
 def extract_desc(desc: str, status: str, done_date: datetime | None) -> tuple:
   pos_desc_label = desc.find("[DESCRICAO]:")
   pos_desc_content = (pos_desc_label if pos_desc_label > -1 else 0) + len("[DESCRICAO]:") 
@@ -559,7 +560,8 @@ tab_table, tab_cards = st.tabs(["📊 Tabela", "🃏 Cartões"])
 with tab_table:
     st.dataframe(
         df_filtered,
-        use_container_width=True,
+        # use_container_width=True,
+        width='stretch',
         hide_index=True,
         column_config={
             "Data de Finalização": st.column_config.TextColumn("📅 Data", width="small"),
